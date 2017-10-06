@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Demo Site</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li *ngIf="activateProduct" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/productForm" routerLinkActive="active">New Product</a></li>
+      <li *ngIf="activateProduct" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/productList" routerLinkActive="active">Product List</a></li>
+
+      <li *ngIf="activateClient" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/clientForm" routerLinkActive="active">New Client</a></li>
+      <li *ngIf="activateClient" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/clientList" routerLinkActive="active">Client List</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a (click)="logout()" href="login">Logout</a></li>
+    </ul>
+  </div>
+</nav>

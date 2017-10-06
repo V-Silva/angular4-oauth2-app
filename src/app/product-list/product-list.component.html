@@ -1,0 +1,29 @@
+<app-navi></app-navi>
+
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="httpStatus>=400 && httpStatus<500" class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Retrieve data Problem!</h4>
+    <p>Data fetch failed with status: {{httpStatus}}.</p>
+  </div>
+
+</div>

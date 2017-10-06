@@ -1,0 +1,56 @@
+<app-navi></app-navi>
+
+
+<div class="container">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Client Name" formControlName="name">
+
+      <div *ngIf="form.controls.name.invalid && (form.controls.name.touched || form.controls.name.dirty)" class="alert alert-danger">
+
+        <div *ngIf="form.controls.name.hasError('required')">
+          Name is required.
+        </div>
+        <div *ngIf="form.controls.name.hasError('minlength')">
+          Name must be at least 2 characters long.
+        </div>
+        <div *ngIf="form.controls.name.hasError('maxlength')">
+          Name must be max 10 characters long.
+        </div>
+        <div *ngIf="form.controls.name.hasError('forbiddenName')">
+          Name cannot be Client.
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select class="form-control" id="status" name="status" formControlName="status">
+              <option value="" disabled selected>select status</option>
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Finished">Finished</option>
+            </select>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid" class="btn btn-default">Submit</button>
+
+
+    <div *ngIf="httpStatus>=400 && httpStatus<500" class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">Submit Problem!</h4>
+      <p>Your submision was failed with status: {{httpStatus}}.</p>
+    </div>
+
+    <div *ngIf="httpStatus>=200 && httpStatus<300" class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>Your data are on server.</p>
+    </div>
+
+
+  </form>
+
+</div>
