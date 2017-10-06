@@ -1,27 +1,23 @@
-# Angular4Oauth2App
+# Angular4 OAuth2 Demo Application. Part -3-
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+Project shows how to use OAuth2 authentication server (see Part -1-) and protected RESTful web service server (see Part -2-). 
+
+Main features
+- Integration with OAuth2 server for authentication and authorization (see Part -1-)
+- Integration with RESTful WS server protected by OAuth2 server (see Part -2-)
+
+
+# How to install/run
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# How to use
+Please login using the following credentials: 
+- admin/nimda for admin access 
+- user1/pass for user access
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Please select:
+- Product for see on products
+- Client to see onli clients
+- Both to see both of them
